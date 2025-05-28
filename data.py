@@ -45,7 +45,13 @@ class DataLoader:
         return sentences_en, sentences_vi
     
     def tokenize(self):
-        """Tokenize the sentences."""
+        """Tokenize the sentences.
+        Returns:\n
+            sequences_en: List of tokenized English sentences.\n
+            sequences_vi: List of tokenized Vietnamese sentences.\n
+            tokenizer_en: Tokenizer for English sentences.\n
+            tokenizer_vi: Tokenizer for Vietnamese sentences.\n
+        """
         sentences_en, sentences_vi = self.load_data()
         tokenizer_en = Tokenizer(filters='', lower=False, oov_token='<unk>')
         tokenizer_vi = Tokenizer(filters='', lower=False, oov_token='<unk>')
